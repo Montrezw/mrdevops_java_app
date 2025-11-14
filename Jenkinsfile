@@ -9,7 +9,7 @@ pipeline{
                 script(
                     gitCheckout(
                         branch: "main"
-                        url: "git@github.com:Montrezw/mrdevops_java_app.git"
+                        url: "https://github.com/Montrezw/JENKINS_SHARED_LIB.git"
                     )
                 )
             }
