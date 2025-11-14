@@ -2,6 +2,9 @@
 
 pipeline{
     agent any
+    tools {
+        maven 'Maven 3.8.7' // Use the name configured in Global Tool Configuration
+    }
     stages{
         stage('Git Checkout'){
             steps{
@@ -15,6 +18,13 @@ pipeline{
             steps{
                 script{
                     mvnTest()
+                }
+            }
+        }
+        stage('Integration test'){
+            steps{
+                script{
+                    mvnIntegrationTest()
                 }
             }
         }
