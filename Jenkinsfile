@@ -3,7 +3,6 @@
 pipeline{
     agent any
     stages{
-         
         stage('Git Checkout'){
             steps{
                 gitCheckout(
@@ -11,6 +10,13 @@ pipeline{
                     url: "https://github.com/Montrezw/mrdevops_java_app.git"
                 )
             }
+        stage('Unit Test Maven'){
+            steps{
+                script{
+                    mvnTest()
+                }
+            }
+        }
         }
     }
 }
