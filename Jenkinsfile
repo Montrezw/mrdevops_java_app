@@ -8,16 +8,13 @@ pipeline{
     stages{
         stage('Git Checkout'){
             steps{
-                gitCheckout(
-                    branch: "main",
-                    url: "https://github.com/Montrezw/mrdevops_java_app.git"
-                )
+                gitCheckout()
             }
         }
         stage('Unit Test Maven'){
             steps{
                 script{
-                    sh 'mvn --version'
+                    mvnTest()
                 }
             }
         }
