@@ -2,12 +2,6 @@
 
 pipeline{
     agent any
-    tools {
-        maven 'Maven 3.8.1' // Use the name configured in Global Tool Configuration
-    }
-    parameters{
-        choice(name: 'action', choices: 'create\ndelete', description: 'Choose create/Destroy')
-    }
     stages{
         stage('Git Checkout'){
             steps{
