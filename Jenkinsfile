@@ -5,9 +5,10 @@ pipeline{
     stages{
         stage('Git Checkout'){
             steps{
-                gitCheckout(
-                    branch: "main",
-                    url: "https://github.com/Montrezw/mrdevops_java_app.git"
+                checkout scmGit(
+                    branches: [[name: 'main']], 
+                    extensions: [], 
+                    userRemoteConfigs: [[url: 'https://github.com/Montrezw/mrdevops_java_app.git']]
                 )
             }
         }
